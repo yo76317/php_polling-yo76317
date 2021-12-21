@@ -1,5 +1,5 @@
 <?php
-include_once "./db.php";
+include_once "../db.php";
 ?>
 
 <!DOCTYPE html>
@@ -76,12 +76,12 @@ margin: 30px auto;
 <div class="container">
     <div class="row">
         <?php
-            $do=(isset($_GET['do']))?$_GET['do']:'show_vote_list';
-            $file="./frontend/".$do.".php";
+            $do=(isset($_GET['do']))?$_GET['do']:'add_subject_form';
+            $file=$do.".php";
             if(file_exists($file)){
                     include $file;
             }else{
-                    include "./frontend/show_vote_list.php";
+                    include "./backend/add_subject_form.php";
             }
         ?>
     </div>

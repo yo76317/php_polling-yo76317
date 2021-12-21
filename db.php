@@ -1,4 +1,5 @@
 <?php
+    // 資料庫
     $dsn="mysql:host=localhost;charset=utf8;dbname=yovote";
     $pdo=new PDO($dsn,'root','');
 
@@ -81,6 +82,10 @@
 
 
     // 取出指定資料表的所有資料
+    // ...語法糖、全域pdo,從指定資料表
+    // 假如isset的arg有值，就檢查是不是陣列
+    // 都滿足就開始陣列拆分後 timp[]拿到key value
+    // implode 接起字串 AND (要空格) 後輸出
     function all($table,...$arg){
     global $pdo;
     $sql="SELECT * FROM `$table` ";
@@ -92,14 +97,18 @@
             $sql=$sql."where " . implode(" AND ",$tmp);
         }else{
             $sql=$sql.$arg[0];
+            // SELECT * FROM `topics`
+
         }
     }
     if(isset($arg[1])){
         $sql=$sql.$arg[1];
     }
     // echo $sql;
+    // dd($arg);
+    // 同一頁取兩次資料以上需要query
     $rows=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
-    //return $pdo->query($sql)->fetchAll();
+    // return $pdo->query($sql)->fetchAll(); 簡寫
     }
 ?> 
