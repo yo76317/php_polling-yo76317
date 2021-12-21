@@ -85,11 +85,42 @@
         return $pdo->query($sql)->fetchColumn();
     }
 
+    // 導向頁面
+    function to($url){
+        header("location:".$url);
+    }
 
 
+    // 更新
+    // 全域pdo、trim刪除前後空白
+    // Where拿便數拆分後，重組，加上$kye=$vlue AND
+    // mb_substr，mb_substr-5碼是字串結束位置
+    function update($table,$column,$where){
+    global $pdo;
+    $sql_set='';
+    foreach ($column as $key => $value) {
+        $sql_set=$sql_set . "`$key`='$value',";
+    }
+    $sql_set=trim($sql_set,',');
+    $sql_where='';
+    foreach ($where as $key => $value) {
+        $sql_where=$sql_where . "`$key`='$value' AND ";
+    }
+    $sql_where=mb_substr($sql_where,0,mb_strlen($sql_where)-5);;
 
-
+    mb_substr($sql_where,0,mb_strlen($sql_where)-5);
+    $sql="UPDATE `$table` SET $sql_set WHERE $sql_where ";
+    //echo $sql;
+    $pdo->exec($sql);
+    }
     
+
+
+    // 萬用查詢~查全部
+    function q($sql){
+    global $pdo;
+    return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     // 刪除
     // 有值、加上條件，有值拆開套入後比對條件
@@ -110,25 +141,7 @@
     
     
     
-    // 更新
-    function update($table,$column,$where){
-        global $pdo;
-        $sql_set='';
-        foreach ($column as $key => $value) {
-            $sql_set=$sql_set . "`$key`='$value',";
-        }
-        $sql_set=trim($sql_set,',');
-        $sql_where='';
-        foreach ($where as $key => $value) {
-            $sql_where=$sql_where . "`$key`='$value' AND ";
-        }
-        $sql_where=mb_substr($sql_where,0,mb_strlen($sql_where)-5);;
     
-        mb_substr($sql_where,0,mb_strlen($sql_where)-5);
-        $sql="UPDATE `$table` SET $sql_set WHERE $sql_where ";
-        //echo $sql;
-        $pdo->exec($sql);
-        }
     
 
 

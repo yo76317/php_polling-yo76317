@@ -75,15 +75,17 @@ margin: 30px auto;
 <!-- 假如file_exists檢查file有值，就引入file，無值就導回add_subject_form -->
 <div class="container">
     <div class="row">
-        <?php
-            $do=(isset($_GET['do']))?$_GET['do']:'show_vote_list';
-            $file="./frontend/".$do.".php";
-            if(file_exists($file)){
-                    include $file;
-            }else{
-                    include "./frontend/show_vote_list.php";
-            }
-        ?>
+        <div class="col">
+            <?php
+                $do=(isset($_GET['do']))?$_GET['do']:'show_vote_list';
+                $file="./frontend/".$do.".php";
+                if(file_exists($file)){
+                        include $file;
+                }else{
+                        include "./frontend/show_vote_list.php";
+                }
+            ?>
+        </div>
     </div>
 </div>
 
