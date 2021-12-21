@@ -1,3 +1,7 @@
+<?php
+include_once "./db.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +14,7 @@
     <style>
 .container{
 min-height: 600px;
-margin: 30px;
+margin: 30px auto;
 }
     </style>
 </head>
@@ -66,15 +70,25 @@ margin: 30px;
 
 
 <!-- 網頁中段 -->
-<div class="container mx-auto">
-    <div class="row ">
-        <div class="col ">
-            <?php
-                // include "backend/add_subject_form.php";
-            ?>
-        </div>
+<!-- do看有無GET拿到do ? 有的的話回傳get到的do,沒有就回傳add_subject_form -->
+<!-- file = 上行的值.php -->
+<!-- 假如file_exists檢查file有值，就引入file，無值就導回add_subject_form -->
+
+
+<div class="container">
+    <div class="row">
+        <?php
+            $do=(isset($_GET['do']))?$_GET['do']:'add_subject_form';
+            $file=$do.".php";
+            if(file_exists($file)){
+                    include $file;
+            }else{
+                    include "./backend/add_subject_form.php";
+            }
+        ?>
     </div>
 </div>
+
 
 
 <div class="p-3 text-center text-light bg-primary">&copy;YoQing版權所有、歡迎盜用</div>
