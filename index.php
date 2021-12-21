@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="">
     <style>
 .container{
-min-height: 544px;
+min-height: 600px;
+margin: 30px;
 }
     </style>
 </head>
@@ -65,11 +66,12 @@ min-height: 544px;
 
 
 <!-- 網頁中段 -->
-
-<div class="container">
-    <div class="row">
-        <div class="col">
-            123
+<div class="container mx-auto">
+    <div class="row ">
+        <div class="col ">
+            <?php
+                // include "backend/add_subject_form.php";
+            ?>
         </div>
     </div>
 </div>
