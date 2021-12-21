@@ -12,21 +12,23 @@
         // 聯結加上topic的變數id
         if(rows('options',['topic_id'=>$value['id']]) > 0){
         echo "<li class='list-group-item'>";
+
         // 列出題目
-        echo "<a class='d-inline-block col-md-8' href='index.php?do=vote&id={$value['id']}'>";
+        echo "<a class='d-inline-block col-6' href='index.php?do=vote&id={$value['id']}'>";
         echo $value['topic'];
         echo "</a>";
         
         // 總投票數膠囊顯示
         $count=q("select sum(`count`) as '總計' from `options` where `topic_id`='{$value['id']}'");
-        echo "<span class='badge badge-pill badge-warning'>";
+        echo "<a class='badge badge-pill badge-warning' href='?do=vote_result&id={$value['id']}'>";
         echo $count[0]['總計'];
-        echo "</span>";
+        echo "</a>";
 
         //看結果按鈕
-        echo "<span class='col-2 float-right text-center'>";
+        echo "<a class='float-right' href='?do=vote_result&id={$value['id']}'>";
         echo "<button type='button' class='btn btn-outline-warning'>觀看結果</button>";
-        echo "</span>";
+        echo "</a>";
+
 
         echo "</li>";
             // dd($value);
