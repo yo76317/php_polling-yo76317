@@ -2,7 +2,8 @@
     // 資料庫
     $dsn="mysql:host=localhost;charset=utf8;dbname=yovote";
     $pdo=new PDO($dsn,'root','');
-
+    // 啟用session
+    session_start();
 
     // 最常用檢查陣列輸出
     function dd($array){

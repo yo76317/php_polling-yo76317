@@ -29,14 +29,6 @@ $options=all('options',['topic_id'=>$_GET['id']]);
         echo   "<input type='hidden' name='opt_id[]' value='{$opt['id']}'>\n";
         echo "</label>\n";
         }
-        // if(count($options)<=4){
-        //     for($i=0;$i<(4-count($options));$i++){
-        //         echo "<label class='list-group-item'>";
-        //         echo   "選項" . (count($options)+1+$i);
-        //         echo   "<input type='text' name='options[]' value=''>";
-        //         echo "</label>";            
-        //     }
-        // }
     ?>
     <input type="submit" value="送出" class="col-1 btn btn-outline-warning">
  </form>

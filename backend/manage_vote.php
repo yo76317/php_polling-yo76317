@@ -1,4 +1,9 @@
-<h2>列出所有的問題-後台</h2>
+<h2>列出所有的問題-後台
+    <a class="btn btn-outline-danger float-right" href="?do=add_subject_form">
+        新增問卷
+    </a>
+</h2>
+
 <?php
     $alltopics=all('topics');
     echo "<ol class='list-group'>";
