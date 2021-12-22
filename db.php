@@ -110,7 +110,7 @@
 
     mb_substr($sql_where,0,mb_strlen($sql_where)-5);
     $sql="UPDATE `$table` SET $sql_set WHERE $sql_where ";
-    //echo $sql;
+    echo $sql . "<br>";
     $pdo->exec($sql);
     }
     
