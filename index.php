@@ -16,6 +16,7 @@ include_once "./db.php";
 min-height: 600px;
 margin: 30px auto;
 }
+.mxauto{margin:30px auto;}
     </style>
 </head>
 <body>
@@ -61,12 +62,39 @@ margin: 30px auto;
 <div class="container-fluid">
     <div class="row">
         <nav class="col bg-dark">
-        <div class="align-middle text-center">
-            <a class="col-2 btn btn-sm btn-primary my-1" href="?do=login">會員登入</a>
-            <a class="col-2 btn btn-sm btn-info my-1" href="?do=reg">註冊會員</a>
-        </div>  
+            <?php 
+                if(isset($_SESSION['error'])){
+                    echo "<div class=''>";
+                    echo "<span class=''>".$_SESSION['error']."</span>";
+                    echo "</div>";
+                }
+                if(isset($_SESSION['user'])){
+                    echo "<div class=''>";
+                    echo "<span>歡迎登入！{$_SESSION['user']}</span>";
+                    echo "</div>";
+            ?>
+                <div class="text-right">
+                    <a class="btn btn-sm btn-primary" href="logout.php">登出</a>
+                </div>
+            <?php
+                }else{
+            ?>
+            <div class="align-middle">
+                <a class="col-2 btn btn-sm btn-primary my-1" href="?do=login">會員登入</a>
+                <a class="col-2 btn btn-sm btn-info my-1" href="?do=reg">註冊會員</a>
+            </div>  
+            <?php
+            }
+            ?>
+        </nav>
     </div>
 </div><!-- 導覽 END -->
+
+
+
+
+
+
 
 
 <!-- 網頁中段 -->
