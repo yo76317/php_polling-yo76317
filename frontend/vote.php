@@ -1,3 +1,5 @@
+<h2>投票功能</h2>
+
 <!-- 用僞get[id]給 find涵式找資料表 -->
 <?php
     $id=$_GET['id'];
@@ -25,7 +27,7 @@
                         // dd($options);
                         // dd($opt);
                     ?>
-                    <input class="col-1 mt-1 btn btn-outline-warning " type="submit" value="投票">
+                    <input class="col-1 mt-1 btn btn-outline-warning" type="submit" value="投票">
                     </ol>
                 </div>
             </div>

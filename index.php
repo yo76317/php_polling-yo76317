@@ -93,11 +93,6 @@ margin: 30px auto;
 
 <div class="p-3 text-center text-light bg-primary">&copy;YoQing版權所有、歡迎盜用</div>
 
-    <script>
-    $('#myList a').on('click', function (e) {
-      e.preventDefault()
-      $(this).tab('show')
-    })
     </script>
     <script src="https://kit.fontawesome.com/ab96302682.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

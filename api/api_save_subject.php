@@ -17,10 +17,12 @@ $topic=$pdo->query($topic_sql)->fetch();
 // 這樣就有一個關聯數值，之後可對應
 // 套用新增涵數，取到的值對應opt_array存到資料表
 foreach($_POST['options'] as $opt){
-    $opt_array=["opt"=>$opt,"topic_id"=>$topic['id']];
-    insert('options',$opt_array);
+    // 改為判斷
+    if($opt!=""){
+        $opt_array=["opt"=>$opt,"topic_id"=>$topic['id']];
+        insert('options',$opt_array);
+    }
 }
-
 
 // echo $opt;
 // echo dd($topic);
