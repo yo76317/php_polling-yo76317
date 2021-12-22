@@ -1,7 +1,7 @@
-<h2 class="text-center font-weight-bold">新增問卷</h2>
+<h2 class="text-center font-weight-bold">新增投票</h2>
 
 <form action="../api/new_subject.php" method='post' class='col-6 m-auto'>
-    <label>問卷主題: <input type="text" name="subject"></label>
+    <label>投票主題: <input type="text" name="subject"></label>
     <div>
         <input type="submit" value="送出">
     </div>

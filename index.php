@@ -10,7 +10,7 @@ include_once "./db.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>投票系統</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./style/style.css">
     <style>
 .container{
 min-height: 600px;
@@ -62,8 +62,8 @@ margin: 30px auto;
     <div class="row">
         <nav class="col bg-dark">
         <div class="align-middle text-center">
-            <a class="col-2 btn btn-sm btn-primary my-1" href="">會員登入</a>
-            <a class="col-2 btn btn-sm btn-info my-1" href="">註冊會員</a>
+            <a class="col-2 btn btn-sm btn-primary my-1" href="?do=login">會員登入</a>
+            <a class="col-2 btn btn-sm btn-info my-1" href="?do=reg">註冊會員</a>
         </div>  
     </div>
 </div><!-- 導覽 END -->

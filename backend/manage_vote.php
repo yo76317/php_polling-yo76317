@@ -1,6 +1,6 @@
 <h2>列出所有的問題-後台
     <a class="btn btn-outline-danger float-right" href="?do=add_subject_form">
-        新增問卷
+        新增投票
     </a>
 </h2>
 
