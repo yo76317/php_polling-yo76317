@@ -23,7 +23,7 @@ margin: 30px auto;
 <div class="container-fluid">
     <div class="row">
         <div class="jumbotron jumbotron-fluid p-0 mb-0" style="overflow:hidden">
-            <a href="index.php">
+            <a href="./index.php">
                 <div id="carouselExampleIndicators" class="carousel slide bg-info" data-ride="carousel" data-interval="2500">
                     <ol class="carousel-indicators position-absolute">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -75,23 +75,33 @@ margin: 30px auto;
 <!-- 假如file_exists檢查file有值，就引入file，無值就導回add_subject_form -->
 <div class="container">
     <div class="row">
-        <?php
-            $do=(isset($_GET['do']))?$_GET['do']:'add_subject_form';
-            $file=$do.".php";
-            if(file_exists($file)){
-                    include $file;
-            }else{
-                    include "./backend/add_subject_form.php";
-            }
-        ?>
+        <div class="col-12">
+            <?php
+                $do=(isset($_GET['do']))?$_GET['do']:'manage_vote';
+                $file=$do.".php";
+                if(file_exists($file)){
+                        include $file;
+                }else{
+                        include "./manage_vote.php";
+                }
+            ?>
+        </div>
     </div>
 </div>
 
-
+<?php 
+// dd($do);
+// dd($file); 
+?>
 
 <div class="p-3 text-center text-light bg-primary">&copy;YoQing版權所有、歡迎盜用</div>
 
-
+    <script>
+    $('#myList a').on('click', function (e) {
+      e.preventDefault()
+      $(this).tab('show')
+    })
+    </script>
     <script src="https://kit.fontawesome.com/ab96302682.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
