@@ -32,19 +32,24 @@ margin: 30px auto;
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="https://i.picsum.photos/id/1008/5616/3744.jpg?hmac=906z84ml4jhqPMsm4ObF9aZhCRC-t2S_Sy0RLvYWZwY" 
-                            class="d-block w-25 m-auto" alt="">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://i.picsum.photos/id/1011/5472/3648.jpg?hmac=Koo9845x2akkVzVFX3xxAc9BCkeGYA9VRVfLE4f0Zzk" 
-                            class="d-block w-25 m-auto" alt="">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://i.picsum.photos/id/1006/3000/2000.jpg?hmac=x83pQQ7LW1UTo8HxBcIWuRIVeN_uCg0cG6keXvNvM8g" 
-                            class="d-block w-25 m-auto" alt="">
-                        </div>
+                    <?php 
+                        // 從資料表ad抓sh=>1
+                        $image=all('ad',['sh'=>1]);
+                        foreach($image as $key => $image2){
+                        // 為0就給active
+                        if($key==0){
+                            echo "<div class='carousel-item active'>";
+                        }else{
+                            echo "<div class='carousel-item'>";
+                        }
+                        echo "<img class='d-block m-auto' style='width:400px;height:400px;' src='./image/{$image2['name']}' alt='{$image2['intro']}'>";
+                        echo "</div>";
+                        }   
+                        // dd($image);  
+                        // dd($image2);       
+                        ?>
                     </div>
+                    <!-- 這邊是左右按鈕換過icon -->
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="fas fa-arrow-alt-circle-left" aria-hidden="true"></span>
                     </a>

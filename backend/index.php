@@ -39,18 +39,20 @@ margin: 30px auto;
                     </ol>
                     <div class="carousel-inner">
                     <?php 
-                        // 圖片active指定及改從image抓取自動輪放
-                        $image=['2.jpg','2.jpg','2.jpg'];
-                        foreach($image as $key => $image){
+                        // 從資料表ad抓sh=>1
+                        $image=all('ad',['sh'=>1]);
+                        foreach($image as $key => $image2){
                         // 為0就給active
                         if($key==0){
                             echo "<div class='carousel-item active'>";
                         }else{
                             echo "<div class='carousel-item'>";
                         }
-                        echo "<img src='../image/{$image}' alt='First slide' class='d-block w-25 m-auto' alt='First slide'>";
+                        echo "<img class='d-block m-auto' style='width:400px;height:400px;' src='../image/{$image2['name']}' alt='{$image2['intro']}'>";
                         echo "</div>";
-                        }            
+                        }   
+                        // dd($image);  
+                        // dd($image2);       
                         ?>
                     </div>
                     <!-- 這邊是左右按鈕換過icon -->
