@@ -61,25 +61,23 @@ margin: 30px auto;
 <!-- 導覽 START -->
 <div class="container-fluid">
     <div class="row">
-        <nav class="col bg-dark">
+        <nav class="col bg-dark text-light text-center p-2">
             <?php 
                 if(isset($_SESSION['error'])){
-                    echo "<div class=''>";
-                    echo "<span class=''>".$_SESSION['error']."</span>";
-                    echo "</div>";
+                    echo "<span>".$_SESSION['error']."</span>";
                 }
                 if(isset($_SESSION['user'])){
-                    echo "<div class=''>";
+                    echo "<div class='mx-auto'>";
                     echo "<span>歡迎登入！{$_SESSION['user']}</span>";
                     echo "</div>";
             ?>
-                <div class="text-right">
-                    <a class="btn btn-sm btn-primary" href="logout.php">登出</a>
-                </div>
+                    <div class='text-right'>
+                    <a class="btn btn-primary" href="logout.php">登出</a>
+                    </div>
             <?php
                 }else{
             ?>
-            <div class="align-middle">
+            <div class="align:center">
                 <a class="col-2 btn btn-sm btn-primary my-1" href="?do=login">會員登入</a>
                 <a class="col-2 btn btn-sm btn-info my-1" href="?do=reg">註冊會員</a>
             </div>  
@@ -89,12 +87,6 @@ margin: 30px auto;
         </nav>
     </div>
 </div><!-- 導覽 END -->
-
-
-
-
-
-
 
 
 <!-- 網頁中段 -->

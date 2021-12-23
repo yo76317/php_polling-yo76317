@@ -14,9 +14,15 @@
         echo "<li class='list-group-item'>";
 
         // 列出題目
-        echo "<a class='d-inline-block col-6' href='index.php?do=vote&id={$value['id']}'>";
-        echo $value['topic'];
-        echo "</a>";
+        // 如果沒有帶session就不給聯結去投票
+        // 只能看結果
+        if(isset($_SESSION['user'])){
+            echo "<a class='d-inline-block col-md-6' href='index.php?do=vote&id={$value['id']}'>";
+            echo $value['topic'];
+            echo "</a>";
+        }else{
+            echo "<span class='d-inline-block col-md-6'>".$value['topic']."</span>";
+        }
         
         // 總投票數膠囊顯示
         $count=q("select sum(`count`) as '總計' from `options` where `topic_id`='{$value['id']}'");

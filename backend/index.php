@@ -1,5 +1,12 @@
 <?php
 include_once "../db.php";
+
+// 加入會員系統，沒帶session就導回前臺
+if(!isset($_SESSION['user'])){
+    to("../index.php");
+    exit();
+  }
+  
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +30,7 @@ margin: 30px auto;
 <div class="container-fluid">
     <div class="row">
         <div class="jumbotron jumbotron-fluid p-0 mb-0" style="overflow:hidden">
-            <a href="./index.php">
+            <a href="index.php">
                 <div id="carouselExampleIndicators" class="carousel slide bg-info" data-ride="carousel" data-interval="2500">
                     <ol class="carousel-indicators position-absolute">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -31,19 +38,22 @@ margin: 30px auto;
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="https://i.picsum.photos/id/1008/5616/3744.jpg?hmac=906z84ml4jhqPMsm4ObF9aZhCRC-t2S_Sy0RLvYWZwY" 
-                            class="d-block w-25 m-auto" alt="">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://i.picsum.photos/id/1011/5472/3648.jpg?hmac=Koo9845x2akkVzVFX3xxAc9BCkeGYA9VRVfLE4f0Zzk" 
-                            class="d-block w-25 m-auto" alt="">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://i.picsum.photos/id/1006/3000/2000.jpg?hmac=x83pQQ7LW1UTo8HxBcIWuRIVeN_uCg0cG6keXvNvM8g" 
-                            class="d-block w-25 m-auto" alt="">
-                        </div>
+                    <?php 
+                        // 圖片active指定及改從image抓取自動輪放
+                        $image=['1.jpg','1.jpg','1.jpg'];
+                        foreach($image as $key => $image){
+                        // 為0就給active
+                        if($key==0){
+                            echo "<div class='carousel-item active'>";
+                        }else{
+                            echo "<div class='carousel-item'>";
+                        }
+                        echo "<img src='../image/{$image}' alt='First slide' class='d-block w-25 m-auto' alt='First slide'>";
+                        echo "</div>";
+                        }            
+                        ?>
                     </div>
+                    <!-- 這邊是左右按鈕換過icon -->
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="fas fa-arrow-alt-circle-left" aria-hidden="true"></span>
                     </a>
@@ -57,14 +67,28 @@ margin: 30px auto;
 </div><!-- 輪撥區 END -->
 
 
-<!-- 導覽 START -->
+
+<!-- 導覽 START -->  
 <div class="container-fluid">
     <div class="row">
-        <nav class="col bg-dark">
-        <div class="align-middle text-center">
-            <a class="col-2 btn btn-sm btn-primary my-1" href="">會員登入</a>
-            <a class="col-2 btn btn-sm btn-info my-1" href="">註冊會員</a>
-        </div>  
+        <nav class="col bg-dark text-light d-flex justify-content-between p-2">
+            <div class="text-left">
+                <a class='px-2' href="?do=show_vote_list">問卷管理</a>
+                <a class='px-2' href="?do=member">會員管理</a>
+                <a class='px-2' href="?do=ad">廣告管理</a>  
+            </div>
+
+            <?php 
+                if(isset($_SESSION['user'])){
+                    echo "<span class='pr-5'>歡迎！{$_SESSION['user']}</span>";
+            ?>
+            <div class="text-right">
+                <a class="btn btn-sm btn-primary mx-1" href="../logout.php">登出</a>
+            </div>
+            <?php
+            }
+            ?>
+        </nav>
     </div>
 </div><!-- 導覽 END -->
 
