@@ -29,7 +29,7 @@ margin: 30px auto;
 <!-- 輪撥 START-->
 <div class="container-fluid">
     <div class="row">
-        <div class="jumbotron jumbotron-fluid p-0 mb-0" style="overflow:hidden">
+        <div class="jumbotron jumbotron-fluid p-0 mb-0 col-12" style="overflow:hidden">
             <a href="index.php">
                 <div id="carouselExampleIndicators" class="carousel slide bg-info" data-ride="carousel" data-interval="2500">
                     <ol class="carousel-indicators position-absolute">
@@ -40,7 +40,7 @@ margin: 30px auto;
                     <div class="carousel-inner">
                     <?php 
                         // 圖片active指定及改從image抓取自動輪放
-                        $image=['1.jpg','1.jpg','1.jpg'];
+                        $image=['2.jpg','2.jpg','2.jpg'];
                         foreach($image as $key => $image){
                         // 為0就給active
                         if($key==0){

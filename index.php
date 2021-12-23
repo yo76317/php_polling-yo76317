@@ -23,7 +23,7 @@ margin: 30px auto;
 <!-- 輪撥 START-->
 <div class="container-fluid">
     <div class="row">
-        <div class="jumbotron jumbotron-fluid p-0 mb-0" style="overflow:hidden">
+        <div class="jumbotron jumbotron-fluid p-0 mb-0 col-12" style="overflow:hidden">
             <a href="index.php">
                 <div id="carouselExampleIndicators" class="carousel slide bg-info" data-ride="carousel" data-interval="2500">
                     <ol class="carousel-indicators position-absolute">
