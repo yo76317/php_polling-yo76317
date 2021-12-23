@@ -39,7 +39,7 @@ margin: 30px auto;
                     </ol>
                     <div class="carousel-inner">
                     <?php 
-                        // 從資料表ad抓sh=>1
+                        // 從資料表ad抓sh=>1判斷顯示或不顯示
                         $image=all('ad',['sh'=>1]);
                         foreach($image as $key => $image2){
                         // 為0就給active
@@ -51,6 +51,7 @@ margin: 30px auto;
                         echo "<img class='d-block m-auto' style='width:400px;height:400px;' src='../image/{$image2['name']}' alt='{$image2['intro']}'>";
                         echo "</div>";
                         }   
+                        // dd($key);
                         // dd($image);  
                         // dd($image2);       
                         ?>

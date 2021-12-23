@@ -1,3 +1,5 @@
+<!-- 投票 -->
+
 <?php 
 include_once "../db.php";
 

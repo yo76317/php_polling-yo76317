@@ -1,6 +1,6 @@
 <?php
 include_once "../db.php";
-
+// 主題資料 投票id 
 $topic=$_POST['topic'];
 $topic_id=$_POST['topic_id'];
 

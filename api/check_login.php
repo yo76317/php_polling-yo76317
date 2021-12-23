@@ -1,10 +1,15 @@
+<!-- 會員驗證 -->
+
 <?php include_once "../db.php";
 
-// 會員驗證，有值就銷毀error後比對資料表內的帳號密碼，無值帳號密碼錯誤
+// 會員驗證遺留，有值就unset銷毀error，無值接下去
 if(isset($_SESSION['error'])){
     unset($_SESSION['error']);
 }
 
+
+// rows計算表有無帳號密碼
+// session帶到其它頁使用
 if(rows('users',$_POST)>0){
     $_SESSION['user']=$_POST['account'];
 

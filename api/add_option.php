@@ -7,3 +7,5 @@ insert('options',['opt'=>"",'topic_id'=>$id]);
 
 to("../backend/?do=edit_subject&id=$id");
 ?>
+
+<?php include_once "../db.php";
