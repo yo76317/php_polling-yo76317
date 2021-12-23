@@ -1,4 +1,4 @@
-<h2 class="text-center font-weight-bold">輪播圖管理</h2>
+<h2 class="text-center font-weight-bold text-secondary">輪播圖-管理</h2>
 
 
 <!-- enctype編碼類型:二進位制資料 -->
@@ -15,13 +15,13 @@
     </div>
     
     <div class="mx-auto mb-2">
-        <input type="submit" value="上傳" class="btn btn-primary">
+        <input type="submit" value="上傳" class="btn btn-outline-info">
     </div>
     
 </form>
 
 
-    <h3 class="text-center">圖片列表</h3>
+    <h3 class="text-center text-secondary">圖片列表</h3>
     <table class="table">
         <tr>
             <td>項目代碼</td>
@@ -34,22 +34,21 @@
             $rows=all('ad');
             foreach($rows as $row){
             echo "<tr>";
-            echo "<td class='my-auto'>{$row['id']}</td>";
-                echo "<td>";
-                    echo "<img src='../image/{$row['name']}' style='width:300px;height:200px'>";
-                echo "</td>";
-                echo "<td>{$row['intro']}</td>";
-                echo "<td>";
-                // 連到api處理sh值
-                echo "<a href='../api/change_status.php?id={$row['id']}'>";
-                echo ($row['sh']==1)?"顯示":"下架";
-                echo "</a>";
-                echo "</td>";
-                echo "<td>";
-                echo "<a class='' href='?do=edit_ad&id={$row['id']}'>修改</a>";
-                    echo "<button>重新上傳</button>";
-                    echo "<a class='' href='../api/del_ad.php?id={$row['id']}'>刪除</a>";
-                echo "</td>";
+                echo "<td class='my-auto'>{$row['id']}</td>";
+                    echo "<td>";
+                        echo "<img src='../image/{$row['name']}' class='rounded-circle' style='width:300px;height:200px'>";
+                    echo "</td>";
+                    echo "<td>{$row['intro']}</td>";
+                    echo "<td>";
+                        // 連到api處理sh值
+                        echo "<a href='../api/change_status.php?id={$row['id']}' class='btn btn-outline-info'>";
+                        echo ($row['sh']==1)?"點擊後廣告-下架":"點擊後廣告-上架";
+                        echo "</a>";
+                    echo "</td>";
+                    echo "<td>";
+                        echo "<a class='btn btn-outline-info mx-1' href='?do=edit_ad&id={$row['id']}'>修改</a>";
+                        echo "<a class='btn btn-outline-danger mx-1' href='../api/del_ad.php?id={$row['id']}'>刪除</a>";
+                    echo "</td>";
             echo "</tr>";
             }
             // dd($rows);

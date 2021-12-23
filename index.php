@@ -33,7 +33,7 @@ margin: 30px auto;
                     </ol>
                     <div class="carousel-inner">
                     <?php 
-                        // 從資料表ad抓sh=>1
+                        // 從資料表ad抓sh=>1的檔
                         $image=all('ad',['sh'=>1]);
                         foreach($image as $key => $image2){
                         // 為0就給active
@@ -116,7 +116,7 @@ margin: 30px auto;
 
 
 
-<div class="p-3 text-center text-light bg-primary">&copy;YoQing版權所有、歡迎盜用</div>
+<div class="p-3 text-center text-light bg-primary">&copy;YoQing版權所有、圖片以外歡迎使用</div>
 
     </script>
     <script src="https://kit.fontawesome.com/ab96302682.js" crossorigin="anonymous"></script>

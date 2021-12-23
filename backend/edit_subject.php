@@ -1,4 +1,4 @@
-<h2>主題及選項修改</h2>
+<h2 class="text-center font-weight-bold text-secondary">主題及選項修改</h2>
 
 <?php
 $subject=find('topics',$_GET['id']);
@@ -15,7 +15,7 @@ $options=all('options',['topic_id'=>$_GET['id']]);
         <input type="hidden" name="topic_id" value="<?=$subject['id'];?>" >
             <!-- 動態新增主題 -->
             <a href="../api/add_option.php?id=<?=$subject['id'];?>">
-                <input class='bg-info border-info text-light rounded' type="button" value="+">
+                <input class='btn btn-outline-success rounded float-right' type="button" value="新增選項">
             </a>
     </label> 
     <!-- <button type="button">+</button> -->
@@ -30,6 +30,6 @@ $options=all('options',['topic_id'=>$_GET['id']]);
         echo "</label>\n";
         }
     ?>
-    <input type="submit" value="送出" class="col-1 btn btn-outline-warning">
+    <input type="submit" value="送出" class="col-1 btn btn-outline-success">
  </form>
  

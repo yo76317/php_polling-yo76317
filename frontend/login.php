@@ -1,4 +1,4 @@
-<h2 class='text-center font-weight-bold'>會員登入</h2>
+<h2 class="text-center font-weight-bold text-secondary">會員登入</h2>
 
 <form action="./api/check_login.php" method="post">
 <table id="loginForm" class='table m-auto w-auto'>

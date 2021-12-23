@@ -1,4 +1,6 @@
-<?php include_once "..db.php";
+<!-- 修改廣告上傳圖片 -->
+
+<?php include_once "../db.php";
 
 // 依POST id欄，find取得ad id
 $ad=find("ad",$_POST['id']);

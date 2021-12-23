@@ -1,5 +1,5 @@
-<h2>列出所有的問題-後台
-    <a class="btn btn-outline-danger float-right" href="?do=add_subject_form">
+<h2 class="text-center font-weight-bold text-secondary">投票主題項目
+    <a class="btn btn btn-outline-success float-right" href="?do=add_subject_form">
         新增投票
     </a>
 </h2>
@@ -20,18 +20,18 @@
 
     // 總投票數膠囊顯示
     $count=q("select sum(`count`) as '總計' from `options` where `topic_id`='{$value['id']}'");
-    echo "<a class='badge badge-pill badge-warning' href='../index.php?do=vote_result&id={$value['id']}'>";
+    echo "<a class='badge badge-pill badge-warning' href='../backend/index.php?do=vote_result&id={$value['id']}'>";
     echo $count[0]['總計'];
     echo "</a>";
     
     //看結果按鈕
-    echo "<a class='float-right' href='../index.php?do=vote_result&id={$value['id']}'>";
+    echo "<a class='float-right' href='../backend/index.php?do=vote_result&id={$value['id']}'>";
     echo "<button type='button' class='btn btn-outline-warning'>觀看結果</button>";
     echo "</a>";
 
     //管理題目
     echo "<a class='d-inline-block col-1 text-center float-right' href='?do=edit_subject&id={$value['id']}'>";
-    echo "<button class='btn btn-outline-danger'>管理</button>";
+    echo "<button class='btn btn-outline-success'>管理</button>";
     echo "</a>";
 
     echo "</li>";

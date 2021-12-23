@@ -1,4 +1,4 @@
-<h2>列出所有的問題頁</h2>
+<h2 class="text-center font-weight-bold text-secondary">投票主題項目</h2>
 
 <!-- 用涵式all抓到資料表topics，並輸出
 在選項上加上超聯結並給值?do=vote&id=

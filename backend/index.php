@@ -76,18 +76,20 @@ margin: 30px auto;
     <div class="row">
         <nav class="col bg-dark text-light d-flex justify-content-between p-2">
             <div class="text-left">
-                <a class='px-2' href="?do=show_vote_list">問卷管理</a>
-                <a class='px-2' href="?do=member">會員管理</a>
-                <a class='px-2' href="?do=ad">廣告管理</a>  
+                <a class='px-2 btn btn-outline-success' href="?do=show_vote_list">問卷管理</a>
+                <a class='px-2 btn btn btn-outline-primary' href="?do=member">會員管理</a>
+                <a class='px-2 btn btn-outline-info' href="?do=ad">廣告管理</a>  
             </div>
 
             <?php 
                 if(isset($_SESSION['user'])){
                     echo "<span class='pr-5'>歡迎！{$_SESSION['user']}</span>";
             ?>
+
             <div class="text-right">
-                <a class="btn btn-sm btn-primary mx-1" href="../logout.php">登出</a>
+                <a class="btn btn-sm btn btn-outline-danger mx-1" href="../logout.php">登出</a>
             </div>
+            
             <?php
             }
             ?>
@@ -121,7 +123,7 @@ margin: 30px auto;
 // dd($file); 
 ?>
 
-<div class="p-3 text-center text-light bg-primary">&copy;YoQing版權所有、歡迎盜用</div>
+<div class="p-3 text-center text-light bg-primary">&copy;YoQing版權所有、圖片以外歡迎使用</div>
 
     <script src="https://kit.fontawesome.com/ab96302682.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

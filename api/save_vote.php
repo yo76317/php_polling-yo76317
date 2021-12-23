@@ -18,7 +18,7 @@ $opt['count']=$opt['count']+1;
 update('options',['count'=>$opt['count']],['id'=>$opt_id]);
 
 // 導向id = topid_id值
-header("location:"."../index.php?do=vote_result&id={$opt['topic_id']}");
+header("location:"."../backend/index.php?do=vote_result&id={$opt['topic_id']}");
 // header("location:"."../index.php?do=vote_result");
 // to("../index.php?do=vote_result&id={$opt['topic_id']}");
 ?>

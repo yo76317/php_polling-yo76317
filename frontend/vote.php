@@ -1,4 +1,4 @@
-<h2>投票功能</h2>
+<h2 class="text-center font-weight-bold text-secondary">請投票</h2>
 
 <!-- 用僞get[id]給 find涵式找資料表 -->
 <?php
