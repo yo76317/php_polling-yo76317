@@ -8,8 +8,11 @@ $sql="select *
       where `topics`.`id`=`options`.`topic_id` AND 
             `topics`.`id`='{$_GET['id']}'";
 $rows=q($sql);
+
 // dd($sql);
 // dd($rows);
+
+
 ?>
 
 <h3> 投票主題 : <?= $rows[0]['topic'];?> </h3>

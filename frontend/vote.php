@@ -10,7 +10,7 @@
 
 <h1> <?php echo $subject['topic'];?> </h1>
 
-    <form action="./api/save_vote.php" method="POST">
+    <form action="../api/save_vote.php" method="POST">
         <!-- 把options陣列拆，拿opt陣列值來用id&opt -->
         <!-- 把選項改成radiom單選,foreach會帶值跑,所以name都一樣 -->
         <div class="container">
