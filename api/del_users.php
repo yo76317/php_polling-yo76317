@@ -7,5 +7,5 @@
 // 刪除資料表ad内的get id
 $image=find('users',$_GET['id']);
 del('users',$_GET['id']);
-to('../backend/?do=ad');
+to('../backend?do=member');
 ?> 

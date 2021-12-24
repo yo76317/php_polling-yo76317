@@ -14,7 +14,7 @@
     echo "<li class='list-group-item'>";
     
     //題目
-    echo "<a class='d-inline-block col-6' href='../index.php?do=vote&id={$value['id']}'>";
+    echo "<a class='d-inline-block col-6' href='../backend/index.php?do=vote&id={$value['id']}'>";
     echo $value['topic'];
     echo "</a>";
 

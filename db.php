@@ -2,6 +2,8 @@
     // 資料庫
     $dsn="mysql:host=localhost;charset=utf8;dbname=yovote";
     $pdo=new PDO($dsn,'root','');
+    // $dsn="mysql:host=localhost;charset=utf8;dbname=s1100402";
+    // $pdo=new PDO($dsn,'s1100402','s1100402');
     // 啟用session
     session_start();
 
