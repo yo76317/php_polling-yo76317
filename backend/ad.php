@@ -1,4 +1,4 @@
-<h2 class="text-center font-weight-bold text-secondary">輪播圖-管理</h2>
+<h2 class="text-center font-weight-bold text-secondary">廣告輪播圖-管理</h2>
 
 
 <!-- enctype編碼類型:二進位制資料 -->

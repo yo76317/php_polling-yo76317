@@ -1,4 +1,4 @@
-<h2 class="text-center font-weight-bold text-secondary">輪播圖-編輯</h2>
+<h2 class="text-center font-weight-bold text-secondary">廣告輪播圖-編輯</h2>
 
 <?php
 $ad=find('ad',$_GET['id']);
